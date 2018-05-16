@@ -47,5 +47,5 @@ stx_test_case_override(test_string_view14o string_view_test1.cpp)
 
 if (NOT MSVC)
     stx_test_case_override(test_variant14o test_variant.cpp)
-    #stx_test_case_override(test_all_includes14o test_all_includes.cpp)
+    stx_test_case_override(test_all_includes14o test_all_includes.cpp)
 endif()

@@ -57,7 +57,7 @@
 #           ifndef STX_HAVE_IN_PLACE_T
             using std::in_place_t;
             using std::in_place;
-#           define STX_IN_PLACE_T 1
+#           define STX_HAVE_IN_PLACE_T 1
 #           endif
             using std::in_place_type_t;
             using std::in_place_type;
@@ -96,8 +96,6 @@ struct in_place_t {
 };
 
 constexpr in_place_t in_place{};
-#define STX_HAVE_IN_PLACE_T 1
-#endif
 
 template <class T> struct in_place_type_t {
     explicit in_place_type_t() = default;
@@ -110,6 +108,8 @@ template <size_t I> struct in_place_index_t {
 };
 template <size_t I>
 constexpr in_place_index_t<I> in_place_index{};
+#define STX_HAVE_IN_PLACE_T 1
+#endif
 
 
 class bad_variant_access : public std::logic_error {

@@ -37,8 +37,11 @@
             using std::nullopt_t;
             using std::nullopt;
             using std::make_optional;
+#       ifndef STX_HAVE_IN_PLACE_T
+#           define STX_HAVE_IN_PLACE_T 1
             using std::in_place_t;
             using std::in_place;
+#       endif // ifndef STX_HAVE_IN_PLACE_T
         }
 #       define STX_HAVE_STD_OPTIONAL 1
 #   elif __has_include(<experimental/optional>)
@@ -49,8 +52,11 @@
             using std::experimental::nullopt_t;
             using std::experimental::nullopt;
             using std::experimental::make_optional;
+#       ifndef STX_HAVE_IN_PLACE_T
+#           define STX_HAVE_IN_PLACE_T 1
             using std::experimental::in_place_t;
             using std::experimental::in_place;
+#       endif // ifndef STX_HAVE_IN_PLACE_T
         }
 #       define STX_HAVE_STD_OPTIONAL 1
 #    endif // __hasinclude(optional)
@@ -317,7 +323,7 @@ constexpr in_place_index_t<I> in_place_index{};
 #endif // __cpp_variable_templates
 
 
-#define STX_HAVE_IN_PLACE_T
+#define STX_HAVE_IN_PLACE_T 1
 #endif // STX_HAVE_IN_PLACE_T
 
 // 20.5.7, Disengaged state indicator
