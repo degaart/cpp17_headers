@@ -33,3 +33,7 @@
 
 # CLion rubbish
 .idea/
+
+# Vim swap files
+*.swp
+
